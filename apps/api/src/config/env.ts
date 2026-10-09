@@ -15,6 +15,7 @@ const schema = z.object({
   POSTGRES_PORT: z.coerce.number().default(5432),
   REDIS_HOST: z.string().default("localhost"),
   REDIS_PORT: z.coerce.number().default(6379),
+  RAG_SERVICE_URL: z.string().url().default("http://localhost:8000"),
 });
 
 export const env = schema.parse(process.env);
