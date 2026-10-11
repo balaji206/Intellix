@@ -17,6 +17,8 @@ class Settings(BaseSettings):
     nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
     llm_model: str = "meta/llama-3.1-70b-instruct"
     embedding_model: str = "nvidia/nv-embedqa-e5-v5"
+    embedding_dim: int = 2048
+    qdrant_collection: str = "intellix_chunks"
 
 
 settings = Settings()
