@@ -5,3 +5,4 @@ __pycache__/
 .next/
 dist/
 *.log
+services/rag-service/scripts/test.*
