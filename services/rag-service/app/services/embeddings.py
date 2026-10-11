@@ -1,12 +1,19 @@
+from functools import lru_cache
+
 from openai import OpenAI
 
 from app.config import settings
 
-_client = OpenAI(
-    api_key=settings.nvidia_api_key,
-    base_url=settings.nvidia_base_url,
-    timeout=60,
-)
+BATCH_SIZE = 16
+
+
+@lru_cache
+def _get_client() -> OpenAI:
+    return OpenAI(
+        api_key=settings.nvidia_api_key,
+        base_url=settings.nvidia_base_url,
+        timeout=60,
+    )
 
 BATCH_SIZE = 16
 
