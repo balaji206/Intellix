@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     qdrant_port: int = 6333
     redis_host: str = "localhost"
     redis_port: int = 6379
+    nvidia_api_key: str = ""
+    nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
+    llm_model: str = "meta/llama-3.1-70b-instruct"
+    embedding_model: str = "nvidia/nv-embedqa-e5-v5"
 
 
 settings = Settings()
