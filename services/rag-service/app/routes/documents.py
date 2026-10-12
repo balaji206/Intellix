@@ -1,12 +1,11 @@
 import shutil
 import tempfile
 from pathlib import Path
-
+from app.services.pipeline import answer, index_file, retrieve
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
 from app.services.parser import SUPPORTED
-from app.services.pipeline import index_file, retrieve
 
 router = APIRouter()
 
@@ -37,3 +36,7 @@ def index_document(file: UploadFile = File(...)):
 @router.post("/search")
 def search_documents(req: SearchRequest):
     return {"question": req.question, "results": retrieve(req.question, req.limit)}
+
+@router.post("/ask")
+def ask(req: SearchRequest):
+    return answer(req.question, req.limit)

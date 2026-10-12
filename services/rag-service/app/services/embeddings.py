@@ -10,19 +10,17 @@ BATCH_SIZE = 16
 @lru_cache
 def _get_client() -> OpenAI:
     return OpenAI(
-        api_key=settings.nvidia_api_key,
+        api_key=settings.nvidia_api_key or "missing",
         base_url=settings.nvidia_base_url,
         timeout=60,
     )
-
-BATCH_SIZE = 16
 
 
 def _embed(texts: list[str], input_type: str) -> list[list[float]]:
     vectors: list[list[float]] = []
     for i in range(0, len(texts), BATCH_SIZE):
         batch = texts[i : i + BATCH_SIZE]
-        resp = _client.embeddings.create(
+        resp = _get_client().embeddings.create(
             model=settings.embedding_model,
             input=batch,
             encoding_format="float",
