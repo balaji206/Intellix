@@ -1,0 +1,174 @@
+[
+  {
+    "id": "q01",
+    "type": "exact",
+    "question": "How do I represent a point in time inside a JWT claim?",
+    "doc": "rfc7519-jwt.txt",
+    "gold": "number of seconds from 1970-01-01T00:00:00Z UTC",
+    "answer": "As a NumericDate: a JSON number of seconds since 1970-01-01T00:00:00Z UTC, ignoring leap seconds."
+  },
+  {
+    "id": "q02",
+    "type": "exact",
+    "question": "Which claim lets me tell two otherwise identical tokens apart?",
+    "doc": "rfc7519-jwt.txt",
+    "gold": "provides a unique identifier for the JWT",
+    "answer": "The jti (JWT ID) claim, which provides a unique identifier for the JWT."
+  },
+  {
+    "id": "q03",
+    "type": "semantic",
+    "question": "How can a server work out how old a token is?",
+    "doc": "rfc7519-jwt.txt",
+    "gold": "identifies the time at which the JWT was issued",
+    "answer": "Using the iat (issued at) claim, which gives the time the JWT was issued."
+  },
+  {
+    "id": "q04",
+    "type": "multi",
+    "question": "What does the header of the RFC's first sample token declare, and which algorithm protects that token?",
+    "doc": "rfc7519-jwt.txt",
+    "gold": "MACed using the HMAC SHA-256 algorithm",
+    "answer": "The header {\"typ\":\"JWT\",\"alg\":\"HS256\"} declares the object is a JWT; the token is a JWS MACed with HMAC SHA-256."
+  },
+  {
+    "id": "q05",
+    "type": "exact",
+    "question": "Which governance outcome puts top management on the hook for AI risk decisions?",
+    "doc": "NIST.AI.100-1.pdf",
+    "gold": "Executive leadership of the organization takes",
+    "answer": "GOVERN 2.3: executive leadership takes responsibility for decisions about risks of AI system development and deployment."
+  },
+  {
+    "id": "q06",
+    "type": "semantic",
+    "question": "How does an organization find out what is still missing to reach its AI risk goals?",
+    "doc": "NIST.AI.100-1.pdf",
+    "gold": "Comparing Current and Target Profiles likely reveals gaps",
+    "answer": "By comparing its Current Profile with its Target Profile, which reveals the gaps to address."
+  },
+  {
+    "id": "q07",
+    "type": "semantic",
+    "question": "Who counts as impacted by an AI system even if they never use it?",
+    "doc": "NIST.AI.100-1.pdf",
+    "gold": "communities, or organizations directly or indirectly affected by AI systems",
+    "answer": "Affected individuals and communities: people, groups or organizations directly or indirectly affected, even without interacting with the system."
+  },
+  {
+    "id": "q08",
+    "type": "semantic",
+    "question": "Which kinds of specialists are involved when an AI model is built and tested?",
+    "doc": "NIST.AI.100-1.pdf",
+    "gold": "include machine learning experts, data scientists, developers",
+    "answer": "AI Development actors, such as machine learning experts, data scientists and developers (plus third-party entities and others)."
+  },
+  {
+    "id": "q09",
+    "type": "exact",
+    "question": "Can the government stop companies from sending people's data to other countries?",
+    "doc": "DPDP-Act-2023.pdf",
+    "gold": "restrict the transfer of personal data by a Data Fiduciary",
+    "answer": "Yes. Under section 16 the Central Government may, by notification, restrict transfer of personal data for processing to notified countries or territories outside India."
+  },
+  {
+    "id": "q10",
+    "type": "exact",
+    "question": "How many days of illness absence does GitLab pay for?",
+    "doc": "gitlab-time-off-types.md",
+    "gold": "up to 25 paid sick days",
+    "answer": "Up to 25 paid sick days per team member, available from their first day of work."
+  },
+  {
+    "id": "q11",
+    "type": "semantic",
+    "question": "If my manager wants me to move my time-off dates, how quickly do they have to tell me?",
+    "doc": "gitlab-time-off-types.md",
+    "gold": "they will do so within 48 hours",
+    "answer": "Within 48 hours, and they must specify which goal or result may be impacted."
+  },
+  {
+    "id": "q12",
+    "type": "semantic",
+    "question": "Can a new parent take their paid break in pieces instead of one block?",
+    "doc": "gitlab-leave-types.docx",
+    "gold": "split it into up to three segments",
+    "answer": "Yes. Parental Leave can be taken all at once or split into up to three segments."
+  },
+  {
+    "id": "q13",
+    "type": "semantic",
+    "question": "Is there paid time off if my town is hit by a flood?",
+    "doc": "gitlab-leave-types.docx",
+    "gold": "natural disasters, community emergencies, or any other catastrophe",
+    "answer": "Yes. Emergency leave gives paid time away for unexpected events such as natural disasters or community emergencies, from the first day of work."
+  },
+  {
+    "id": "q14",
+    "type": "multi",
+    "question": "How are public holidays tracked for each person, and what happens to the days left at year end?",
+    "doc": "gitlab-time-off-types.md",
+    "gold": "unused public holiday balances will not rollover to the following calendar year",
+    "answer": "Each team member has a country-specific public holiday balance in Workday and chooses which days to use. It must be used within the calendar year; unused balances do not roll over."
+  },
+  {
+    "id": "q15",
+    "type": "cross",
+    "question": "Which signing algorithms must every JWT library support, and what does later guidance say about limiting the algorithms a library will accept?",
+    "doc": [
+      "rfc7519-jwt.txt",
+      "rfc8725-jwt-bcp.txt"
+    ],
+    "gold": [
+      "MUST be implemented by conforming JWT implementations",
+      "MUST NOT use any other algorithms"
+    ],
+    "answer": "RFC 7519 requires only HS256 and none to be implemented. RFC 8725 says libraries must let the caller specify the supported algorithms and must not use any others."
+  },
+  {
+    "id": "q16",
+    "type": "cross",
+    "question": "If I'm off for a long illness versus welcoming a new baby, how long does the company keep my full pay going in each case?",
+    "doc": [
+      "gitlab-time-off-types.md",
+      "gitlab-leave-types.docx"
+    ],
+    "gold": [
+      "up to 25 working days through the GitLab Sick Time policy",
+      "GitLab provides 16 weeks of paid Parental Leave"
+    ],
+    "answer": "Sick leave: 100% of weekly wages for up to 25 working days (topping up statutory pay). Parental leave: 16 weeks of paid leave at 100% of weekly wages."
+  },
+  {
+    "id": "q17",
+    "type": "unanswerable",
+    "question": "How much money does GitLab give team members to set up a home office desk and chair?",
+    "doc": null,
+    "gold": null,
+    "answer": null
+  },
+  {
+    "id": "q18",
+    "type": "unanswerable",
+    "question": "How long a sabbatical can a team member take after five years of service?",
+    "doc": null,
+    "gold": null,
+    "answer": null
+  },
+  {
+    "id": "q19",
+    "type": "unanswerable",
+    "question": "Which Node.js library does the JWT specification recommend for signing tokens?",
+    "doc": null,
+    "gold": null,
+    "answer": null
+  },
+  {
+    "id": "q20",
+    "type": "unanswerable",
+    "question": "Which cloud provider does NIST recommend for hosting AI models?",
+    "doc": null,
+    "gold": null,
+    "answer": null
+  }
+]

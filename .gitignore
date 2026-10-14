@@ -6,3 +6,4 @@ __pycache__/
 dist/
 *.log
 services/rag-service/scripts/test.*
+   evaluation/datasets/corpus/evaluation/datasets/corpus/
